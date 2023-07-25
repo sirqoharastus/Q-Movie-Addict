@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0C0C0C"
+    tools:context=".presentation.ui.screens.HomeFragment">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <TextView
+           android:id="@+id/textView"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/montserrat"
+           android:text="Q"
+           android:textSize="20sp"
+           android:textColor="#C42673"
+           android:layout_marginEnd="2dp"
+           app:layout_constraintBottom_toBottomOf="@+id/movie_addict_textView"
+           app:layout_constraintEnd_toStartOf="@+id/movie_addict_textView"
+           app:layout_constraintTop_toTopOf="@+id/movie_addict_textView" />
+
+
+       <TextView
+           android:id="@+id/movie_addict_textView"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="20dp"
+           android:fontFamily="@font/montserrat"
+           android:text="Movie Addict"
+           android:textSize="16sp"
+           android:textColor="#35B2D0"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <TextView
+           android:id="@+id/textView2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="20dp"
+           android:layout_marginTop="20dp"
+           android:fontFamily="@font/montserrat_bold"
+           android:letterSpacing="0.04"
+           android:lineHeight="10dp"
+           android:text="Hello,"
+           android:textColor="@color/white"
+           android:textSize="20sp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/movie_addict_textView" />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/montserrat_bold"
+           android:text="Hello,"
+           android:textSize="20sp"
+           android:lineHeight="10dp"
+           android:textColor="@color/white"
+           android:letterSpacing="0.04"
+           android:layout_marginTop="20dp"
+           android:layout_marginStart="20dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/movie_addict_textView" />
+
+       <TextView
+           android:id="@+id/textView3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="20dp"
+           android:fontFamily="@font/montserrat"
+           android:letterSpacing="0.04"
+           android:lineHeight="10dp"
+           android:text="Let's find your favourite movie!"
+           android:textColor="@color/white"
+           android:textSize="15sp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/movie_filter_recyclerView"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="10dp"
+           tools:listitem="@layout/movie_filter_item_layout"
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+           android:layout_marginHorizontal="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+           app:spanCount="2"
+
+           tools:listitem="@layout/movie_item_layout"
+           android:layout_marginVertical="10dp"
+           android:layout_marginHorizontal="20dp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/movie_filter_recyclerView" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
