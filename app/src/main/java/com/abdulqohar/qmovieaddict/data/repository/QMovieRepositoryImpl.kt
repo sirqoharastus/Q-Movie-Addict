@@ -18,7 +18,6 @@ class QMovieRepositoryImpl @Inject constructor(
 ): QMovieRepository {
 
     override fun getPopularMovies(): Flowable<List<MovieEntity>>  {
-
         val remoteMoviesSingle = movieRemoteDatasource.getPopularMovies().doOnSuccess { movies ->
             movieDao.insertMovies(movies)
         }.onErrorResumeNext { throwable ->
